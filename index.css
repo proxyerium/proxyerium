@@ -1,21 +1,86 @@
-html, body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #3c3c3c;
-    height: 100%;
-
+/* ============variables============ */
+:root {
+    --bg-color: #3c3c3c;
+    --bg-subcolor: #a9a9a9;
+    --txt-color: #f0f8ff; /*aliceblue*/
 }
 
-header {
-    flex: auto;
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
 
-    background-color: darkgray;
-    padding: 2rem;
+html, body{
+    background-color: var(--bg-color);
+    height: 100%;
+    font-family: monospace;
+    transition: background-color .2s ease;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1fr 8%;
+}
+
+input[type="button"] {
+    margin: 10px auto;
+    background-color: aquamarine;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#cover {
+    background-color: var(--bg-subcolor);
+    padding: 1rem;
     border-radius: 2px;
     box-shadow: 4px 5px 4px;
 
     text-align: center;
-    font-family: monospace;
 }
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: opacity .3s ease;
+
+    opacity: 0.3;
+    &:hover {
+        opacity: 1;
+        background-color: #1c1c1c;
+    }
+
+    color: var(--txt-color);
+
+    > section {
+        flex: auto;
+        font-size: smaller;
+    }
+    > nav {
+        flex: auto;
+        max-width: 30%;
+
+        display: flex;
+        justify-content: flex-start;
+
+        > a {
+            margin: auto 10px;
+
+            &:hover {
+                background-color: var(--bg-subcolor);
+            }
+        }
+    }
+}
+
+/* ==============animations==================== */
