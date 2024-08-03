@@ -1,8 +1,11 @@
 /* ============variables============ */
 :root {
+    /* dark theme default */
     --bg-color: #3c3c3c;
     --bg-subcolor: #a9a9a9;
-    --txt-color: #f0f8ff; /*aliceblue*/
+    --txt-color: #f0f8ff;
+
+    --opacity-hide: .3;
 }
 
 * {
@@ -19,17 +22,10 @@ html, body{
     font-family: monospace;
     transition: background-color .2s ease;
 }
-
 body {
     display: grid;
-    grid-template-rows: 1fr 8%;
+    grid-template-rows: 10% 1fr 8%;
 }
-
-input[type="button"] {
-    margin: 10px auto;
-    background-color: aquamarine;
-}
-
 
 main{
     display: flex;
@@ -38,43 +34,40 @@ main{
     align-items: center;
     height: 100%;
 }
-
-#cover {
-    background-color: var(--bg-subcolor);
-    padding: 1rem;
-    border-radius: 2px;
-    box-shadow: 4px 5px 4px;
-
-    text-align: center;
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
-
 footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    transition: opacity .3s ease;
 
-    opacity: 0.3;
+    padding: 0 1rem;
+
+    color: var(--txt-color);
+    opacity: var(--opacity-hide);
+    transition: opacity .3s ease;
     &:hover {
         opacity: 1;
         background-color: #1c1c1c;
     }
 
-    color: var(--txt-color);
-
     > section {
         flex: auto;
-        font-size: smaller;
+        font-size: 12px;
     }
     > nav {
         flex: auto;
         max-width: 30%;
 
         display: flex;
-        justify-content: flex-start;
+        justify-content: flex-end;
 
         > a {
-            margin: auto 10px;
+            margin: auto 8px;
 
             &:hover {
                 background-color: var(--bg-subcolor);
@@ -83,4 +76,30 @@ footer {
     }
 }
 
-/* ==============animations==================== */
+#topbar {
+    
+}
+#cover {
+    background-color: var(--bg-subcolor);
+    padding: 1rem;
+    border-radius: 2px;
+    box-shadow: 4px 5px 4px;
+
+    text-align: center;
+}
+#button-theme {
+    border: none;
+    background: url("assets/dark.svg") no-repeat center;
+    width: 24px;
+    height: 24px;
+    padding: 1.5rem;
+
+    opacity: var(--opacity-hide);
+    transition: opacity .3s ease;
+    &:hover {
+        opacity: 1;
+        border: 2px solid var(--bg-subcolor);
+        border-radius: 50%;
+        background-color: #1c1c1c;
+    }
+}
