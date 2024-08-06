@@ -11,12 +11,12 @@
 
 <body>
 
-    <header id="topbar">
+    <header>
         <input id="button-theme" type="button"/>
     </header>
 
     <main>
-        <section id="cover">
+        <section id="note">
             <p>=== proxyerium's website ===</p>
             <br>
             <p>Thanks for your visiting,</p>
@@ -25,16 +25,22 @@
     </main>
 
     <footer>
+
         <section id="info">
-            <p style="font-size: 16px;">proxyerium &copy;2023~2024</p>
+            <p style="font-size: 16px;"><u>proxyerium</u> &copy;2023~2024</p>
             <p >used pure <i>HTML,CSS,JS</i></p>
         </section>
+
         <nav id="links">
-            <a href="https://github.com/proxyerium" target="_blank">
-                <img src="assets/brand-github.svg" title="github"/>
+            <a href="https://github.com/proxyerium">
+                <!-- <img src="assets/brand-github.svg" title="github"/> -->
+                <object id="link-github"
+                        type="image/svg+xml"
+                        data="assets/brand-github.svg?fill=#ffffff">
+                </object>
             </a>
 
-            <a href="https://space.bilibili.com/24548578" target="_blank">
+            <a href="https://space.bilibili.com/24548578">
                 <img src="assets/brand-bilibili.svg" title="bilibili"/>
             </a>
         </nav>

@@ -1,42 +1,59 @@
 /* ============variables============ */
 :root {
-    /* dark theme default */
+    --icon-theme: url('assets/dark.svg');   /* dark theme default */
     --bg-color: #3c3c3c;
     --bg-subcolor: #a9a9a9;
-    --txt-color: #f0f8ff;
+    --txt-color: #f3f3f3;
+    /* --svg-color: #ffffff; */
 
-    --opacity-hide: .3;
+    --ani-hover: background-color .2s ease;
 }
 
 * {
     margin: 0;
     padding: 0;
 }
-a {
-    text-decoration: none;
-}
-
-html, body{
+html,
+body {
     background-color: var(--bg-color);
     height: 100%;
     font-family: monospace;
-    transition: background-color .2s ease;
+    transition: var(--ani-hover);
 }
 body {
     display: grid;
     grid-template-rows: 10% 1fr 8%;
 }
-
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+a {
+    text-decoration: none;
 }
+
 header {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    & > input[type="button"] {
+        border: none;
+        background: var(--icon-theme) no-repeat center;
+        height: 24px;
+        padding: 1.5rem;
+
+        opacity: .3;
+        transition: opacity .2s ease;
+
+        &:hover {
+            border: 2px solid var(--txt-color);
+            opacity: 1;
+            border-radius: 50%;
+            background-color: var(--bg-subcolor);
+        }
+    }
+}
+main{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -48,11 +65,12 @@ footer {
     padding: 0 1rem;
 
     color: var(--txt-color);
-    opacity: var(--opacity-hide);
-    transition: opacity .3s ease;
+    opacity: .3;
+    transition: opacity .1s ease;
+
     &:hover {
         opacity: 1;
-        background-color: #1c1c1c;
+        background-color: var(--bg-subcolor);
     }
 
     > section {
@@ -66,8 +84,10 @@ footer {
         display: flex;
         justify-content: flex-end;
 
+
         > a {
             margin: auto 8px;
+            transition: var(--ani-hover);
 
             &:hover {
                 background-color: var(--bg-subcolor);
@@ -76,30 +96,12 @@ footer {
     }
 }
 
-#topbar {
-    
-}
-#cover {
+#note {
     background-color: var(--bg-subcolor);
-    padding: 1rem;
+    width: min(500px, 60vw);
     border-radius: 2px;
     box-shadow: 4px 5px 4px;
+    font-size: 18px;
 
     text-align: center;
-}
-#button-theme {
-    border: none;
-    background: url("assets/dark.svg") no-repeat center;
-    width: 24px;
-    height: 24px;
-    padding: 1.5rem;
-
-    opacity: var(--opacity-hide);
-    transition: opacity .3s ease;
-    &:hover {
-        opacity: 1;
-        border: 2px solid var(--bg-subcolor);
-        border-radius: 50%;
-        background-color: #1c1c1c;
-    }
 }
