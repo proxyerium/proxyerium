@@ -1,12 +1,19 @@
 /* ============variables============ */
 :root {
-    --icon-theme: url('assets/dark.svg');   /* dark theme default */
-    --bg-color: #3c3c3c;
-    --bg-subcolor: #a9a9a9;
-    --txt-color: #f3f3f3;
-    /* --svg-color: #ffffff; */
-
     --ani-hover: background-color .2s ease;
+
+    &[data-theme="dark"] {
+        --icon-theme:   url('assets/dark.svg');   /* dark theme default */
+        --bg-color:     #3c3c3c;
+        --bg-subcolor:  #a9a9a9;
+        --txt-color:    #f3f3f3;
+    }
+    &[data-theme="light"] {
+        --icon-theme:   url('assets/light.svg');
+        --bg-color:     #f5deb3;
+        --bg-subcolor:  #ff8c00;
+        --txt-color:    #3e3e3e;
+    }
 }
 
 * {
@@ -36,6 +43,7 @@ header {
 
     & > input[type="button"] {
         border: none;
+        border-radius: 50%;
         background: var(--icon-theme) no-repeat center;
         height: 24px;
         padding: 1.5rem;
@@ -46,7 +54,6 @@ header {
         &:hover {
             border: 2px solid var(--txt-color);
             opacity: 1;
-            border-radius: 50%;
             background-color: var(--bg-subcolor);
         }
     }
